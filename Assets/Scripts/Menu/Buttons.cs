@@ -3,16 +3,13 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    /// <Methods>
-
-    /// <Private Methods>
     void Start()
     {
-        GetComponent<Animator>().SetBool("Inactive", true);
-        GetComponent<Animator>().SetBool("Active", false);
+        AnimationEnd();
     }
 
-    /// <Public Methods>
+    #region ButtonsAnimation
+
     public void AnimationStart()
     {
         GetComponent<Animator>().SetBool("Active", true);
@@ -23,5 +20,6 @@ public class Buttons : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("Inactive", true);
         GetComponent<Animator>().SetBool("Active", false);
-    }
+    } 
+    #endregion
 }

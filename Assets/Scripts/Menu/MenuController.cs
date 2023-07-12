@@ -1,38 +1,65 @@
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    /// <Variables>
-
-    /// <Public Variables>
+    #region Public Variables
     [Header("Canvas GameObjects:")]
     public GameObject MainMenu;
     public GameObject CanvasSettings;
     public GameObject CanvasCredits;
+
+    [Header("Array Return Buttons GameObjects:")]
     public GameObject[] ReturnToMenuButton;
 
+    [Header("Array GameObjects:")]
     public GameObject[] Buttons;
 
+    [Header("Transition GameObjects:")]
     public GameObject StartingTransition;
     public GameObject EndingTransition;
 
-    /// <Private Readonly Variables>
+    [Header("Settings GameObjects:")]
+    public AudioMixer AudioMixer;
+    public TMP_Dropdown ResolutionDropdown;
+    #endregion
 
+    private Resolution[] resolutions;
 
-    /// <Private Not Readonly Variables>
-
-
-    /// <Methods>
-
-    /// <Private Methods>
+    #region Methods
 
     void Start()
     {
         EnableEndTransition();
+
+        resolutions = Screen.resolutions;
+
+        ResolutionDropdown.ClearOptions();
+
+        List<string> options = new();
+
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        ResolutionDropdown.AddOptions(options);
+        ResolutionDropdown.value = currentResolutionIndex;
+        ResolutionDropdown.RefreshShownValue();
     }
 
     void Update()
@@ -40,6 +67,7 @@ public class MenuController : MonoBehaviour
         OnMouseDown();
     }
 
+    #region OnMouseDown 
     void OnMouseDown()
     {
         Buttons[0].GetComponent<Button>().onClick.AddListener(StartGame); // Start Button
@@ -49,12 +77,16 @@ public class MenuController : MonoBehaviour
         ReturnToMenuButton[0].GetComponent<Button>().onClick.AddListener(ReturnToMenu); // Settings Canvas
         ReturnToMenuButton[1].GetComponent<Button>().onClick.AddListener(ReturnToMenu); // Credits Canvas
     }
+    #endregion
 
+    #region Start
     void StartGame()
     {
         Debug.Log("Play");
     }
+    #endregion
 
+    #region Settings
     void GameSettings()
     {
         StartCoroutine(OpenSettings());
@@ -72,6 +104,29 @@ public class MenuController : MonoBehaviour
         EnableEndTransition();
     }
 
+    public void SetVolume(float volume)
+    {
+        AudioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetFullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+    #endregion
+
+    #region Credits
     void GameCredits()
     {
         StartCoroutine(OpenCredits());
@@ -88,7 +143,9 @@ public class MenuController : MonoBehaviour
 
         EnableEndTransition();
     }
+    #endregion
 
+    #region ReturnMenu
     void ReturnToMenu()
     {
         StartCoroutine(OpenMenu());
@@ -106,13 +163,17 @@ public class MenuController : MonoBehaviour
 
         EnableEndTransition();
     }
+    #endregion
 
+    #region Exit
     void ExitGame()
     {
         Debug.Log("Exit");
         Application.Quit();
     }
+    #endregion
 
+    #region Transition
     void EnableStartingTransition()
     {
         StartingTransition.SetActive(true);
@@ -125,7 +186,8 @@ public class MenuController : MonoBehaviour
         EndingTransition.SetActive(true);
         EndingTransition.GetComponent<Animator>().SetBool("Active", true);
         StartingTransition.SetActive(false);
-    }
-
-    /// <Public Methods>
+    } 
+    #endregion
+    
+    #endregion
 }
