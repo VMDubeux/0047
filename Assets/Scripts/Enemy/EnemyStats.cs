@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +8,10 @@ public class EnemyStats : MonoBehaviour
 {
 
     public int myHealth, myDamage, mySpeed;
+    [Range(0,99)] public int dropRate = 50;
     public Transform tower;    
     public EnemySO enemySO;
+    public GameObject cardGO;    
     NavMeshAgent navMesh;
     void Start()
     {
@@ -30,6 +31,18 @@ public class EnemyStats : MonoBehaviour
     {
         Vector3 target = tower.position - transform.position;
         navMesh.destination = tower.position;
-
+    }
+private void OnCollisionEnter(Collision other) {
+    if(other.collider.CompareTag("Ground") == false)
+    Die();
+}
+    private void Die()
+    {
+        int r = Random.Range(0,99);
+        if(r <= dropRate)
+        {
+            Instantiate(cardGO, gameObject.transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject,0.1f);
     }
 }
