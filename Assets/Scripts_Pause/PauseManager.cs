@@ -57,10 +57,6 @@ public class PauseManager : MonoBehaviour
     {
         PauseMenu.SetActive(false);
         _pauseEnabled = false;
-        Buttons[0].GetComponent<Animator>().SetBool("Active", false);
-        Buttons[0].GetComponent<Animator>().SetBool("Inactive", true);
-        Buttons[1].GetComponent<Animator>().SetBool("Active", false);
-        Buttons[1].GetComponent<Animator>().SetBool("Inactive", true);
         Buttons[0].SetActive(false);
         Buttons[1].SetActive(false);
     } 
