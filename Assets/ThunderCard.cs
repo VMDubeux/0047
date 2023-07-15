@@ -8,7 +8,7 @@ public class ThunderCard : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 6);
+        Destroy(gameObject, 2);
     }
     void Update()
     {

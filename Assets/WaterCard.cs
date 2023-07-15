@@ -15,7 +15,7 @@ public class WaterCard : MonoBehaviour
     void Start()
     {
         movingVector = (target.position - transform.position).normalized;
-        Destroy(gameObject, 10);
+        Destroy(gameObject, 6);
     }
 
     void Update()

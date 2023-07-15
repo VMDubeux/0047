@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4711765205850983745
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -623,7 +623,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -683,7 +683,7 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: -10, y: 180, z: 0}
+    m_Rotation: {x: -20, y: 180, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1329,8 +1329,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.013207495, g: 0.66543007, b: 1, a: 0.8784314}
-        key1: {r: 0, g: 0.84908867, b: 1, a: 0.7058824}
+        key0: {r: 0.013207495, g: 0.66543007, b: 1, a: 1}
+        key1: {r: 0, g: 0.84908867, b: 1, a: 0.8784314}
         key2: {r: 0, g: 0.9783993, b: 1, a: 0}
         key3: {r: 0, g: 0.9783993, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1346,7 +1346,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 29105
+        atime1: 41634
         atime2: 65535
         atime3: 0
         atime4: 0

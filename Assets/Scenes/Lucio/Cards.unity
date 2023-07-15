@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterCard
       objectReference: {fileID: 0}
+    - target: {fileID: 3871593146749261613, guid: 661ba4b3340f1a34ba963b5acb8bb734, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4711765205850983745, guid: 661ba4b3340f1a34ba963b5acb8bb734, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -190,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 907503807786417185, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
       propertyPath: m_Name
       value: FireCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 907503807786417185, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3639064521086052570, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
       propertyPath: m_RootOrder
