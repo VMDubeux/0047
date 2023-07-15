@@ -13,6 +13,7 @@ public class EnemyStats : MonoBehaviour
     public EnemySO enemySO;
     public GameObject cardGO;    
     NavMeshAgent navMesh;
+    bool isDead = false;
     void Start()
     {
         // Pegar par�metros dos ScriptleObjects
@@ -31,9 +32,14 @@ public class EnemyStats : MonoBehaviour
     {
         Vector3 target = tower.position - transform.position;
         navMesh.destination = tower.position;
+        if(myHealth <= 0 && !isDead)
+        {
+            Die();
+            isDead = true;
+        }
     }
 private void OnCollisionEnter(Collision other) {
-    if(other.collider.CompareTag("Ground") == false)
+    if(other.collider.CompareTag("Tower") == true)
     Die();
 }
     private void Die()
