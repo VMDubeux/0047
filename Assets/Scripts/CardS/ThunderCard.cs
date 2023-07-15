@@ -22,6 +22,8 @@ public class ThunderCard : MonoBehaviour
 
             // Dano ao inimigo
             collision.gameObject.GetComponent<EnemyStats>().myHealth = collision.gameObject.GetComponent<EnemyStats>().myHealth - damage;
+            collision.gameObject.GetComponent<EnemyStats>().myHealth = collision.gameObject.GetComponent<EnemyStats>().myHealth - damage;
+            collision.gameObject.GetComponent<EnemyStats>().Hurt();
             // Ativar área de fogo
         }
         

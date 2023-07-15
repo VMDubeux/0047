@@ -243,6 +243,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6478769491864979906, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478769491864979906, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
 --- !u!1001 &7194502670210140901

@@ -3,33 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using TMPro;
 public class CardSelection : MonoBehaviour
 {
     bool fireCardSelected = false, waterCardSelected =  false, thunderCardSelected = false;
+    public int cardPoints = 0;
     RaycastHit hit;
     public Camera myCamera;
     public GameObject fireCardGO, waterCardGO, thunderCardGO;
+    public TextMeshProUGUI cardPointsTMP;
     void Update()
     {
         Fire();
         Thunder();
         Water();
     }
-
     // Funcoes CANVAS
     public void FireCardSelected()
     {
         fireCardSelected = true;
     }
-
     public void ThunderCardSelected()
     {
         thunderCardSelected = true;
     }
-
     public void WaterCardSelected()
     {
         waterCardSelected = true;
+    }
+    public void CardValueChange()
+    {
+        cardPointsTMP.text = cardPoints.ToString();
     }
     // Funcoes extraidas
     private void Fire()
@@ -50,7 +54,6 @@ public class CardSelection : MonoBehaviour
             }
         }
     }
-
     private void Thunder()
     {
         if (thunderCardSelected)
@@ -74,7 +77,8 @@ public class CardSelection : MonoBehaviour
         if(waterCardSelected)
         {
             Instantiate(waterCardGO, new Vector3(0, 0, 200), Quaternion.identity);
-        waterCardSelected= false;
+            waterCardSelected= false;
         }
     }
+    // mudar valor do cardPoints no painel
 }

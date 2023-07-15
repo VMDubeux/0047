@@ -22,6 +22,7 @@ public class FireCard : MonoBehaviour
         
         // Dano ao inimigo
         other.GetComponent<EnemyStats>().myHealth = other.GetComponent<EnemyStats>().myHealth - damage;
+        other.GetComponent<EnemyStats>().Hurt();
         // Ativar área de fogo
         }
     }

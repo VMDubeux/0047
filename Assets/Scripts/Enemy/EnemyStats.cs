@@ -11,7 +11,8 @@ public class EnemyStats : MonoBehaviour
     [Range(0,99)] public int dropRate = 50;
     public Transform tower;    
     public EnemySO enemySO;
-    public GameObject cardGO;    
+    public GameObject cardGO;
+    public GameObject hurtPS;
     NavMeshAgent navMesh;
     bool isDead = false;
     void Start()
@@ -47,8 +48,14 @@ private void OnCollisionEnter(Collision other) {
         int r = Random.Range(0,99);
         if(r <= dropRate)
         {
-            Instantiate(cardGO, gameObject.transform.position, Quaternion.identity);
+        Instantiate(cardGO, gameObject.transform.position, Quaternion.identity);
         }
         Destroy(gameObject,0.1f);
+    }
+
+    public void Hurt()
+    {
+        GameObject hurt = Instantiate(hurtPS, transform.position, Quaternion.identity);
+        Destroy(hurt, 2);
     }
 }

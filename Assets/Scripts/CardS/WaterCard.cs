@@ -35,6 +35,8 @@ public class WaterCard : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
         collision.gameObject.GetComponent<EnemyStats>().myHealth = collision.gameObject.GetComponent<EnemyStats>().myHealth - damage;
+        collision.gameObject.GetComponent<EnemyStats>().myHealth = collision.gameObject.GetComponent<EnemyStats>().myHealth - damage;
+        collision.gameObject.GetComponent<EnemyStats>().Hurt();
         }
     }
 }

@@ -149,17 +149,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1267090408 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-  m_PrefabInstance: {fileID: 2096798212740385506}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a996c830d97c722429405a080601ad1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1402735899
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,25 +381,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2096798211143591860, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+    - target: {fileID: 2074192569, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_Name
-      value: FireCard
+      value: CardPoints
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798211143591866, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1267090408}
-    - target: {fileID: 2096798211143591866, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FireCardSelected
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798211143591866, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CardSelection, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798211143591866, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 2096798211358002604, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Name
+      value: Cards
       objectReference: {fileID: 0}
     - target: {fileID: 2096798211591555329, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_Name
@@ -505,64 +482,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1267090408}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: WaterCardSelected
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CardSelection, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245518, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_Name
-      value: WaterCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351705, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_Name
-      value: ThunderCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 2096798212209245517, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+    - target: {fileID: 2096798212209245517, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_FillCenter
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1267090408}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ThunderCardSelected
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CardSelection, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 2096798212209245517, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b471de69578c02446990b74bba25ad0d, type: 3}
