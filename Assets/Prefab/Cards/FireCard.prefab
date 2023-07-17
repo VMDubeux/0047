@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7986343963623914497}
   - component: {fileID: 6478769491864979906}
   - component: {fileID: 90070399605002024}
+  - component: {fileID: 2309545719291206417}
   m_Layer: 0
   m_Name: FireCard
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  colTimer: 1
 --- !u!198 &6478769491864979906
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -3684,7 +3686,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -4894,3 +4896,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!65 &2309545719291206417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907503807786417185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9378912, y: 1.7691993, z: 3.126314}
+  m_Center: {x: -0.02454958, y: -0.25788125, z: -0.062172413}
