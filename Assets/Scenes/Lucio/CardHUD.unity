@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &267821029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2096798211143591866, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+  m_PrefabInstance: {fileID: 2096798212740385506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312204243 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 974308569786447594, guid: 53fb6fff688fd3847a4c530e94471438, type: 3}
@@ -149,6 +160,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &593517850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+  m_PrefabInstance: {fileID: 2096798212740385506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1261472540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6797908863377534447, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+  m_PrefabInstance: {fileID: 2096798212740385506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402735899
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +250,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1768025667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2096798212653351711, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+  m_PrefabInstance: {fileID: 2096798212740385506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &974308570011446585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,13 +425,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2074192569, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_Name
-      value: CardPoints
+    - target: {fileID: 456795269, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_text
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798211358002604, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+    - target: {fileID: 1258311427260496519, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_Name
-      value: Cards
+      value: WaterCostTMP
       objectReference: {fileID: 0}
     - target: {fileID: 2096798211591555329, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_Name
@@ -477,33 +521,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+    - target: {fileID: 2547497198840397392, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Name
+      value: FireCost
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+    - target: {fileID: 4213174585033816486, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Name
+      value: ThunderCost
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
+    - target: {fileID: 6774313259919622307, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Name
+      value: FireCostTMP
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245516, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CardSelection, Assembly-CSharp
+    - target: {fileID: 7617272570189182324, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Name
+      value: WaterCost
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245517, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_Type
-      value: 1
+    - target: {fileID: 8497140730409694538, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Name
+      value: ThunderCostTMP
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245517, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_FillCenter
-      value: 1
+    - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: cardPoints
+      value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 2096798212209245517, guid: b471de69578c02446990b74bba25ad0d, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: fireButton
+      value: 
+      objectReference: {fileID: 267821029}
+    - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: waterButton
+      value: 
+      objectReference: {fileID: 593517850}
+    - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: waterCostUI
+      value: 
+      objectReference: {fileID: 1261472540}
+    - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: thunderButton
+      value: 
+      objectReference: {fileID: 1768025667}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b471de69578c02446990b74bba25ad0d, type: 3}

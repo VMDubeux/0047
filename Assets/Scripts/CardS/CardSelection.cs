@@ -7,11 +7,19 @@ using TMPro;
 public class CardSelection : MonoBehaviour
 {
     bool fireCardSelected = false, waterCardSelected =  false, thunderCardSelected = false;
-    public int cardPoints = 0;
+    public int cardPoints = 0, fireCost = 5, waterCost = 5, thunderCost = 5;
     RaycastHit hit;
     public Camera myCamera;
     public GameObject fireCardGO, waterCardGO, thunderCardGO;
-    public TextMeshProUGUI cardPointsTMP;
+    public TextMeshProUGUI cardPointsTMP, waterCostUI, fireCostUI, thunderCostUI;
+    public Button waterButton, fireButton, thunderButton;
+
+    private void Start() {
+        fireCostUI.text = fireCost.ToString();
+        waterCostUI.text = waterCost.ToString();
+        thunderCostUI.text = thunderCost.ToString();
+        cardPointsTMP.text = cardPoints.ToString();
+    }
     void Update()
     {
         Fire();
@@ -31,12 +39,30 @@ public class CardSelection : MonoBehaviour
     {
         waterCardSelected = true;
     }
+    // mudar valor do cardPoints no painel
     public void CardValueChange()
     {
         cardPointsTMP.text = cardPoints.ToString();
+        // checar se pode usar a carta
+        if(cardPoints >= waterCost)
+        {
+            waterButton.interactable = true;
+        }
+        else waterButton.interactable = false;
+
+        if(cardPoints >= fireCost)
+        {
+            fireButton.interactable = true;
+        }
+        else fireButton.interactable = false;
+        if(cardPoints >= thunderCost)
+        {
+            thunderButton.interactable = true;
+        }
+        else thunderButton.interactable = false;
     }
     // Funcoes extraidas
-    private void Fire()
+    private void Fire() // Carta de fogo
     {
         if (fireCardSelected)
         {
@@ -51,10 +77,12 @@ public class CardSelection : MonoBehaviour
                     }
                 }
                 fireCardSelected = false;
+                cardPoints -= fireCost;
+                CardValueChange();
             }
         }
     }
-    private void Thunder()
+    private void Thunder() // Carta de trovão
     {
         if (thunderCardSelected)
         {
@@ -69,16 +97,19 @@ public class CardSelection : MonoBehaviour
                     }
                 }
                 thunderCardSelected = false;
+                cardPoints -= thunderCost;
+                CardValueChange();
             }
         }
     }
-    private void Water()
+    private void Water() // Carta de água
     {
         if(waterCardSelected)
         {
             Instantiate(waterCardGO, new Vector3(0, 0, 200), Quaternion.identity);
             waterCardSelected= false;
+            cardPoints -= waterCost;
+            CardValueChange();
         }
     }
-    // mudar valor do cardPoints no painel
 }
