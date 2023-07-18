@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Nexus : MonoBehaviour
 {
-    public int nexusHP;
+
+    public float nexusHP, maxHP = 100;
+    public Image nexusImage;
     GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+       nexusHP = maxHP;
        gameManager = GetComponent<GameManager>();
     }
 
@@ -32,7 +35,9 @@ public class Nexus : MonoBehaviour
                     int damage = other.GetComponent<EnemyStats>().myDamage;
                 // Reduzir vida da torre
                     nexusHP -= damage;
+                nexusImage.fillAmount = nexusHP/maxHP;
                 Destroy(other.gameObject);
+
             }
 
             if (nexusHP <= 0)

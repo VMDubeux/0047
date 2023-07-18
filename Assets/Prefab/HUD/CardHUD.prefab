@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -248,7 +248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 500.62402, y: -50}
+  m_AnchoredPosition: {x: 500, y: -50}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2074192572
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 3077991071207216705}
   - component: {fileID: 6797908863377534447}
   m_Layer: 5
-  m_Name: WaterCost
+  m_Name: WaterCostTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a996c830d97c722429405a080601ad1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPoints: 0
+  cardPoints: 50
   fireCost: 5
   waterCost: 5
   thunderCost: 5
@@ -1167,9 +1167,12 @@ MonoBehaviour:
   waterCardGO: {fileID: 3871593146749261613, guid: 661ba4b3340f1a34ba963b5acb8bb734, type: 3}
   thunderCardGO: {fileID: 6430635669137163384, guid: 002e315b2b8fb1742860c9f0153f84d0, type: 3}
   cardPointsTMP: {fileID: 456795269}
-  waterCostUI: {fileID: 2149192541702551881}
+  waterCostUI: {fileID: 6797908863377534447}
   fireCostUI: {fileID: 866458559905810997}
   thunderCostUI: {fileID: 2149192541702551881}
+  waterButton: {fileID: 2096798212209245516}
+  fireButton: {fileID: 2096798211143591866}
+  thunderButton: {fileID: 2096798212653351711}
 --- !u!1 &2096798212209245518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1455,7 @@ GameObject:
   - component: {fileID: 7754432173255047271}
   - component: {fileID: 828318576743548317}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: FireCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,7 +1532,7 @@ GameObject:
   - component: {fileID: 477607032671403435}
   - component: {fileID: 7904312963612504976}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ThunderCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1606,7 +1609,7 @@ GameObject:
   - component: {fileID: 4309069245443937063}
   - component: {fileID: 866458559905810997}
   m_Layer: 5
-  m_Name: FireCost
+  m_Name: FireCostTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1744,7 @@ GameObject:
   - component: {fileID: 7408885718605440949}
   - component: {fileID: 581491213329125700}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: WaterCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1818,7 +1821,7 @@ GameObject:
   - component: {fileID: 6738958343598129399}
   - component: {fileID: 2149192541702551881}
   m_Layer: 5
-  m_Name: ThunderCost
+  m_Name: ThunderCostTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

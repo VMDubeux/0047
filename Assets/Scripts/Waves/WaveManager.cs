@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
     public GameObject [] creeps; 
     public Transform spawnPoint;
+    public TextMeshProUGUI waveCountUI;
     public int creepCount;
-    int creepIndex;
+    int creepIndex, waveIndex = 0;
     public float spawnRate=1;
     void Start()
     {
-        
+        waveCountUI.text = "Wave 0";
     }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             CreepSpawn();
+            waveIndex++;
+            waveCountUI.text = "Wave " + waveIndex.ToString();
         }
     }
 

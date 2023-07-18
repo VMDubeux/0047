@@ -13,7 +13,6 @@ public class CardSelection : MonoBehaviour
     public GameObject fireCardGO, waterCardGO, thunderCardGO;
     public TextMeshProUGUI cardPointsTMP, waterCostUI, fireCostUI, thunderCostUI;
     public Button waterButton, fireButton, thunderButton;
-
     private void Start() {
         fireCostUI.text = fireCost.ToString();
         waterCostUI.text = waterCost.ToString();
