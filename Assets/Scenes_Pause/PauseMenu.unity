@@ -1967,6 +1967,10 @@ MonoBehaviour:
   - {fileID: 1057159446}
   - {fileID: 488238104}
   PauseMenu: {fileID: 1866370403}
+  MusicToggle: {fileID: 67526385}
+  SfxToggle: {fileID: 490673536}
+  MusicSlider: {fileID: 1071628701}
+  SfxSlider: {fileID: 2009926339}
 --- !u!4 &921381946
 Transform:
   m_ObjectHideFlags: 0
