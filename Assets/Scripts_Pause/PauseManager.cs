@@ -16,6 +16,11 @@ public class PauseManager : MonoBehaviour
     public Toggle MusicToggle, SfxToggle;
     public Slider MusicSlider, SfxSlider;
 
+    [Header("Canvas Menu Complementar GameObjects:")]
+    public GameObject MainMenu;
+    public Camera UICamera;
+    public GameObject CreditsVideo;
+
     //private AudioSource MusicSource, SfxSource;
     #endregion
 
@@ -76,7 +81,10 @@ public class PauseManager : MonoBehaviour
 
     void OpenMainMenu() 
     {
-        
+        Debug.Log("Voltou para o menu.");
+        MainMenu.SetActive(true);
+        UICamera.gameObject.SetActive(true);
+        CreditsVideo.SetActive(true);
     }
 
     public void ToggleMusic()
