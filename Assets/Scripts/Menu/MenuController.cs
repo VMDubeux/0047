@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -28,6 +29,10 @@ public class MenuController : MonoBehaviour
     [Header("Settings GameObjects:")]
     public AudioMixer AudioMixer;
     public TMP_Dropdown ResolutionDropdown;
+
+    [Header("Complementar Canvas GameObjects:")]
+    public Camera UICamera;
+    public GameObject CreditsVideo;
     #endregion
 
     private Resolution[] resolutions;
@@ -37,7 +42,17 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         EnableEndTransition();
+        Resolution();
+    }
 
+    void Update()
+    {
+        OnMouseDown();
+    }
+
+    #region Resolution
+    private void Resolution()
+    {
         resolutions = Screen.resolutions;
 
         ResolutionDropdown.ClearOptions();
@@ -60,12 +75,8 @@ public class MenuController : MonoBehaviour
         ResolutionDropdown.AddOptions(options);
         ResolutionDropdown.value = currentResolutionIndex;
         ResolutionDropdown.RefreshShownValue();
-    }
-
-    void Update()
-    {
-        OnMouseDown();
-    }
+    } 
+    #endregion
 
     #region OnMouseDown 
     void OnMouseDown()
@@ -82,7 +93,10 @@ public class MenuController : MonoBehaviour
     #region Start
     void StartGame()
     {
-        Debug.Log("Play");
+        Debug.Log("Iniciou o jogo.");
+        MainMenu.SetActive(false);
+        UICamera.gameObject.SetActive(false);
+        CreditsVideo.SetActive(false);
     }
     #endregion
 
@@ -102,11 +116,6 @@ public class MenuController : MonoBehaviour
         CanvasSettings.SetActive(true);
 
         EnableEndTransition();
-    }
-
-    public void SetVolume(float volume)
-    {
-        AudioMixer.SetFloat("volume", volume);
     }
 
     public void SetQuality(int qualityIndex)
