@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float interacionDistance;
-    public GameObject actionCursor;
 
-
-    private GameObject interacionObject;
 
     // Start is called before the first frame update
     void Start()
@@ -36,28 +32,6 @@ public class GameManager : MonoBehaviour
             
             Destroy(other.gameObject);
         }
-    }
-
-    public void ActiveCursos(GameObject obj)
-    {
-       
-        interacionObject = obj;
-        if (Vector2.Distance(CoreGame._instance.playerMovement.transform.position, interacionObject.transform.position) <= interacionDistance)
-        {
-            actionCursor.transform.position = obj.transform.position;
-            actionCursor.SetActive(true);
-
-        }
-        else
-        {
-            DisableCursor();
-        }
-    }
-
-    public void DisableCursor()
-    {
-        actionCursor.SetActive(false);
-        interacionObject = null;
     }
 
 
