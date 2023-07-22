@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreGame : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
-    public static CoreGame _instance;
-
-    public GameManager gameManager;
-    public EnemyPath enemyPath;
-    public Nexus nexus;
-    public PlayerMovement playerMovement;
-    
-
     // Start is called before the first frame update
     void Start()
     {
