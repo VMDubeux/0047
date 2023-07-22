@@ -9,7 +9,8 @@ public class CoreGame : MonoBehaviour
     public GameManager gameManager;
     public EnemyPath enemyPath;
     public Nexus nexus;
-    
+    public PlayerMovement playerMovement;
+
 
     // Start is called before the first frame update
     void Start()
