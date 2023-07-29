@@ -238,7 +238,7 @@ MonoBehaviour:
   myDamage: 5
   mySpeed: 10
   dropRate: 25
-  tower: {fileID: 3440732549360389451, guid: 0063052743500d04984c9e2762591bd3, type: 3}
   enemySO: {fileID: 11400000, guid: 562fd4406c869774887c00433351fe44, type: 2}
   cardGO: {fileID: 8629740999314369891, guid: 9b0b9e834375cb14ea5581869de17abd, type: 3}
   hurtPS: {fileID: 5336077648224627271, guid: 770dc82e23c387949ad45390df7a6283, type: 3}
+  tower: {fileID: 2146052737386235803, guid: f3701cacd94ef1f4a96f6b8cfb089be2, type: 3}

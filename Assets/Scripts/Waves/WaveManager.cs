@@ -6,38 +6,56 @@ using TMPro;
 public class WaveManager : MonoBehaviour
 {
     public GameObject [] creeps; 
-    public Transform spawnPoint;
+    public Transform [] spawnPoints;
     public TextMeshProUGUI waveCountUI;
     public int creepCount;
     int creepIndex, waveIndex = 0;
     public float spawnRate=1;
+    bool wavebool = true;
     void Start()
     {
         waveCountUI.text = "Wave 0";
+        CreepSpawn();
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            CreepSpawn();
-            waveIndex++;
-            waveCountUI.text = "Wave " + waveIndex.ToString();
-        }
+
     }
 
     void CreepSpawn()
     {
-        for (int i = 0; i < creepCount; i++)
+        for (int i = 0; i < creepCount*2; i++)
         {
             Invoke("StartCS", i * spawnRate);
         }
+            waveIndex++;
+            waveCountUI.text = "Wave " + waveIndex.ToString();
+            if(wavebool)
+            {
+            wavebool = false;
+            StartCoroutine(NextWave());
+            }
     }
 
     void StartCS()
     {
         for (int i = 0; i < creeps.Length; i++)
         {
-        Instantiate(creeps[i], spawnPoint.position, Quaternion.identity);
+        int r = Random.Range(0,spawnPoints.Length - 1);
+        Instantiate(creeps[i], spawnPoints[r].position, Quaternion.identity);
         }
+    }
+    void IncreaseCreepCount()
+    {
+        creepCount++;
+        spawnRate -= 0.02f;
+    }
+
+    IEnumerator NextWave()
+    {
+        yield return new WaitForSecondsRealtime(10 + (creepCount*2*spawnRate));
+        IncreaseCreepCount();
+        wavebool = true;
+        CreepSpawn();
     }
 }

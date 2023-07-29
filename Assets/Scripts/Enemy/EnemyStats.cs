@@ -9,11 +9,11 @@ public class EnemyStats : MonoBehaviour
 
     public int myHealth, myDamage, mySpeed;
     [Range(0,99)] public int dropRate = 50;
-    public Transform tower;    
     public EnemySO enemySO;
     public GameObject cardGO;
     public GameObject hurtPS;
     NavMeshAgent navMesh;
+    public Transform tower;    
     bool isDead = false;
     void Start()
     {
