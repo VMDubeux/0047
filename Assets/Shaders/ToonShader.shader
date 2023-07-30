@@ -57,9 +57,10 @@ Shader "TowerDeffense/ToonShader"
                 //Scale the object from its center
 
                 #if COMPLEX // use vertex colors for flow
-                        o.vertex = UnityObjectToClipPos(v.vertex + v.normal * _OutlineSize);
+                    o.vertex = UnityObjectToClipPos(v.vertex * _OutlineSizeComplex);
                 #else // or world normal
-                        o.vertex = UnityObjectToClipPos(v.vertex * _OutlineSizeComplex);
+                        
+                    o.vertex = UnityObjectToClipPos(v.vertex + v.normal * _OutlineSize);
                 #endif
 
                 return o;

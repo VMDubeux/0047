@@ -7,6 +7,7 @@ public class WaterCard : MonoBehaviour
 {
     public Transform target;
     Vector3 movingVector;
+    bool goingUp = true;
     public float speed = 10;
     public int damage = 10;
     //bool returning = false;
@@ -14,13 +15,24 @@ public class WaterCard : MonoBehaviour
 
     void Start()
     {
-        movingVector = (target.position - transform.position).normalized;
-        Destroy(gameObject, 6);
+        movingVector = new Vector3 (0,1,0);
+        //(target.position - transform.position).normalized;
+        Destroy(gameObject, 4);
     }
 
     void Update()
     {
+        if(transform.position.y > target.position.y)
+        {
+            goingUp = false;
+        }
+        if(goingUp)
+        {
         transform.Translate(movingVector * speed * Time.deltaTime);
+        }
+        else 
+        transform.Translate(-movingVector * speed * Time.deltaTime);
+
         // Ele vai descer?
 
         //if (transform.position.z <= 0 && returning == false)

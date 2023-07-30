@@ -70,7 +70,7 @@ public class CardSelection : MonoBehaviour
                 Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    if (hit.collider.CompareTag("Ground"))
+                    if (hit.collider)
                     {
                         Instantiate(fireCardGO, hit.point, Quaternion.identity);
                     }
@@ -90,7 +90,7 @@ public class CardSelection : MonoBehaviour
                 Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    if (hit.collider.CompareTag("Ground"))
+                    if (hit.collider)
                     {
                         Instantiate(thunderCardGO, hit.point, Quaternion.identity);
                     }
@@ -105,7 +105,7 @@ public class CardSelection : MonoBehaviour
     {
         if(waterCardSelected)
         {
-            Instantiate(waterCardGO, new Vector3(0, 0, 200), Quaternion.identity);
+            Instantiate(waterCardGO, waterCardGO.transform.position, Quaternion.identity);
             waterCardSelected= false;
             cardPoints -= waterCost;
             CardValueChange();
