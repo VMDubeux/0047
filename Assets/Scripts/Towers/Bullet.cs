@@ -3,13 +3,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage = 5;
-
     private Vector3 targetPosition;
     private Transform Target;
-
     public float speed = 70f;
     public float explosionRadius = 0f;
-
 
     public void Seek(Transform _target)
     {
@@ -17,11 +14,10 @@ public class Bullet : MonoBehaviour
         Target = _target;
     }
 
-
     // Update is called once per frame
     void Update()
     {
-        if(Target == null)
+        if (Target == null)
         {
             Destroy(gameObject);
             return;
@@ -36,15 +32,13 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);  
-
+        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
-   
-    #region        // MEUS MÉTODOS
+
+    #region // MEUS MÉTODOS
     void HitTarget()
     {
-
-        if( explosionRadius > 0f)
+        if (explosionRadius > 0f)
         {
             Explode();
         }
@@ -53,40 +47,42 @@ public class Bullet : MonoBehaviour
             Damage(Target);
         }
 
-
-
         Destroy(gameObject);
     }
 
-
-    void Explode ()
+    void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
-            if(collider.tag == "Enemy")
+            if (collider.tag == "Enemy")
             {
                 Damage(collider.transform);
+                SlowDownEnemy(collider.transform);
             }
         }
-
     }
+
     void Damage(Transform other)
     {
-        // Destroy(enemy.gameObject);
-        // Dano ao inimigo
-        other.gameObject.GetComponent<EnemyStats>().myHealth = other.gameObject.GetComponent<EnemyStats>().myHealth - damage;
+        other.gameObject.GetComponent<EnemyStats>().myHealth -= damage;
         other.gameObject.GetComponent<EnemyStats>().Hurt();
-        // Ativar ?rea de fogo
+        // Ativar área de fogo ou qualquer outra ação ao causar dano
     }
 
-
+    void SlowDownEnemy(Transform enemyTransform)
+    {
+        EnemyMovement enemyMovement = enemyTransform.GetComponent<EnemyMovement>();
+        if (enemyMovement != null)
+        {
+            enemyMovement.SlowDown();
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
-    #endregion  
-
+    #endregion
 }
