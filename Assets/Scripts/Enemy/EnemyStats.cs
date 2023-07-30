@@ -32,11 +32,11 @@ public class EnemyStats : MonoBehaviour
     void Update()
     {
         Vector3 target = tower.position - transform.position;
-        navMesh.destination = tower.position;
+        navMesh.destination = tower.position; 
         if(myHealth <= 0 && !isDead)
         {
-            Die();
             isDead = true;
+            Die();
         }
     }
 private void OnCollisionEnter(Collision other) {
@@ -50,7 +50,11 @@ private void OnCollisionEnter(Collision other) {
         {
         Instantiate(cardGO, gameObject.transform.position, Quaternion.identity);
         }
-        Destroy(gameObject,0.1f);
+        Animator myAnimator = GetComponentInChildren<Animator>();
+        AudioSource myAudioSource = GetComponent<AudioSource>();
+        myAudioSource.Play();
+        myAnimator.SetTrigger("dead");
+        Destroy(gameObject,2f);
     }
 
     public void Hurt()

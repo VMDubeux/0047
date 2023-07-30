@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy (0)
   m_EditorClassIdentifier: 
   enemyLife: 20
-  enemySpeed: 30
+  enemySpeed: 15
   enemyDamage: 5

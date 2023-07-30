@@ -10,17 +10,15 @@ public class Card : MonoBehaviour
     private void Start() {
         myAnimator = GetComponent<Animator>();
         cardSelection = FindObjectOfType<CardSelection>().GetComponent<CardSelection>();
+        myAnimator.SetTrigger("pickup");
+        CardPickup();
+        Destroy(gameObject, 3);
     }
-    void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Player") && !pickUp)
-        {
-            myAnimator.SetTrigger("pickup");
+    public void CardPickup()
+    {
             // add bonus
             cardSelection.cardPoints++;
             cardSelection.CardValueChange();
-            pickUp = true;
-            // feedback de pickup
-            Destroy(gameObject, 3);
-        }
+            pickUp = true;      
     }
 }
