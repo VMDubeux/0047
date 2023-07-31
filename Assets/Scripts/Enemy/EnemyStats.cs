@@ -8,6 +8,15 @@ public class EnemyStats : MonoBehaviour
 {
 
     public int myHealth, myDamage, mySpeed;
+
+    public float reducedMoveSpeed = 2.5f;
+    public float slowdownDuration = 5f;
+
+    private float currentMoveSpeed;
+    private bool isSlowed = false;
+    private float slowdownTimer = 0f;
+
+
     [Range(0,99)] public int dropRate = 50;
     public Transform tower;    
     public EnemySO enemySO;
@@ -28,9 +37,21 @@ public class EnemyStats : MonoBehaviour
         // Igualar NavMeshSpeed com par�metro
         navMesh.speed = mySpeed;
 
+        currentMoveSpeed = mySpeed;
+
     }
     void Update()
     {
+        if (isSlowed)
+        {
+            slowdownTimer -= Time.deltaTime;
+            if (slowdownTimer <= 0f)
+            {
+                isSlowed = false;
+                currentMoveSpeed = mySpeed;
+            }
+        }
+
         Vector3 target = tower.position - transform.position;
         navMesh.destination = tower.position;
         if(myHealth <= 0 && !isDead)
@@ -57,5 +78,17 @@ private void OnCollisionEnter(Collision other) {
     {
         GameObject hurt = Instantiate(hurtPS, transform.position, Quaternion.identity);
         Destroy(hurt, 2);
+    }
+
+    public void SlowDown()
+    {
+        isSlowed = true;
+        slowdownTimer = slowdownDuration;
+        currentMoveSpeed = reducedMoveSpeed;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return currentMoveSpeed;
     }
 }

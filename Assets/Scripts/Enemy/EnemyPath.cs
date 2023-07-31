@@ -7,7 +7,7 @@ public class EnemyPath : MonoBehaviour
 {
     NavMeshAgent agent;
 
-    public Transform tower;    
+    public Transform tower;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,6 @@ public class EnemyPath : MonoBehaviour
     {
         agent.destination = tower.position;
     }
-    
-   
+
+
 }
