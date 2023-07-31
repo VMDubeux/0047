@@ -5,14 +5,20 @@ using UnityEngine;
 public class ThunderCard : MonoBehaviour
 {
     public int damage;
+    public float timeToFade, volumeFade = 2;
+    AudioSource myAudioSource;
 
     void Start()
     {
-        Destroy(gameObject, 2);
+        myAudioSource = GetComponent<AudioSource>();
+        Destroy(gameObject, volumeFade);
     }
     void Update()
     {
-
+        // reduz som do efeito com o tempo 
+        timeToFade -= Time.deltaTime;
+        if(timeToFade > 0)
+        myAudioSource.volume = (1/volumeFade) * timeToFade;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,7 +30,7 @@ public class ThunderCard : MonoBehaviour
             collision.gameObject.GetComponent<EnemyStats>().myHealth = collision.gameObject.GetComponent<EnemyStats>().myHealth - damage;
             collision.gameObject.GetComponent<EnemyStats>().myHealth = collision.gameObject.GetComponent<EnemyStats>().myHealth - damage;
             collision.gameObject.GetComponent<EnemyStats>().Hurt();
-            // Ativar área de fogo
+            // Ativar ï¿½rea de fogo
         }
         
     }    

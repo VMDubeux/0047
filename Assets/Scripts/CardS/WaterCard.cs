@@ -8,8 +8,9 @@ public class WaterCard : MonoBehaviour
     public Transform target;
     Vector3 movingVector;
     bool goingUp = true;
-    public float speed = 10;
+    public float speed = 10, volumeFade = 7.5f, timeToFade;
     public int damage = 10;
+    AudioSource myAudioSource;
     //bool returning = false;
 
 
@@ -17,7 +18,9 @@ public class WaterCard : MonoBehaviour
     {
         movingVector = new Vector3 (0,1,0);
         //(target.position - transform.position).normalized;
-        Destroy(gameObject, 4);
+        Destroy(gameObject, volumeFade);
+        myAudioSource = GetComponent<AudioSource>();
+        timeToFade = volumeFade;
     }
 
     void Update()
@@ -32,14 +35,10 @@ public class WaterCard : MonoBehaviour
         }
         else 
         transform.Translate(-movingVector * speed * Time.deltaTime);
-
-        // Ele vai descer?
-
-        //if (transform.position.z <= 0 && returning == false)
-        //{
-           // movingVector = movingVector + new Vector3 (0,-1,0);
-          //  returning = true;
-        //}
+        // reduz som do efeito com o tempo 
+        timeToFade -= Time.deltaTime;
+        if(timeToFade > 0)
+        myAudioSource.volume = (1/volumeFade) * timeToFade;
     }
 
     private void OnCollisionEnter(Collision collision)

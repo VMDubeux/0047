@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: fireCardGO
       value: 
-      objectReference: {fileID: 907503807786417185, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
+      objectReference: {fileID: 4084076668163090661, guid: ee99392a15dc4eb4b812c535fcbd9710, type: 3}
     - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: waterCardGO
       value: 

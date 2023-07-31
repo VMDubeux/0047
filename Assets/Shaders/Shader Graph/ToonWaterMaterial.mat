@@ -75,7 +75,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RippleDensity: 50
+    - _RippleDensity: 100
     - _RippleSlimless: 5
     - _RippleSpeed: 1
     - _SmoothnessTextureChannel: 0
@@ -89,7 +89,7 @@ Material:
     - _BaseColor: {r: 0.40251547, g: 0.7797716, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.54509807}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
     - _RippleColor: {r: 0, g: 0.6575696, b: 0.8679245, a: 1}
     - _WaveSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []

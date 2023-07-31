@@ -6,17 +6,23 @@ public class FireCard : MonoBehaviour
 {
     public int damage;
     public float colTimer = 1;
+    float timeToFade, volumeFade = 2;
     BoxCollider myBoxCollider;
+    AudioSource myAudioSource; 
 
     void Start()
     {
+        myAudioSource = GetComponent<AudioSource>();
         myBoxCollider = GetComponent<BoxCollider>();
         Invoke("CollisionEnable", colTimer);
-        Destroy(gameObject, 2);        
+        Destroy(gameObject, volumeFade);        
     }
     void Update()
     {
-        
+        // reduz som do efeito com o tempo 
+        timeToFade -= Time.deltaTime;
+        if(timeToFade > 0)
+        myAudioSource.volume = (1/volumeFade) * timeToFade;
     }
 private void OnCollisionEnter(Collision other) 
     {
