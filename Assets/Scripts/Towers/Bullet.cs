@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
-    #region // MEUS MÉTODOS
+    #region // MEUS Mï¿½TODOS
     void HitTarget()
     {
         if (explosionRadius > 0f)
@@ -67,15 +67,15 @@ public class Bullet : MonoBehaviour
     {
         other.gameObject.GetComponent<EnemyStats>().myHealth -= damage;
         other.gameObject.GetComponent<EnemyStats>().Hurt();
-        // Ativar área de fogo ou qualquer outra ação ao causar dano
+        // Ativar ï¿½rea de fogo ou qualquer outra aï¿½ï¿½o ao causar dano
     }
 
     void SlowDownEnemy(Transform enemyTransform)
     {
-        EnemyMovement enemyMovement = enemyTransform.GetComponent<EnemyMovement>();
-        if (enemyMovement != null)
+        EnemyStats enemyStats = enemyTransform.GetComponent<EnemyStats>();
+        if (enemyStats != null)
         {
-            enemyMovement.SlowDown();
+            enemyStats.SlowDown();
         }
     }
 

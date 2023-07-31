@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         waveCountUI.text = "Wave 0";
-        CreepSpawn();
+        Invoke("CreepSpawn", 10);
     }
     void Update()
     {

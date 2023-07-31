@@ -455,7 +455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2096798211358002605, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -700
+      value: -800
       objectReference: {fileID: 0}
     - target: {fileID: 2096798211358002605, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -475,7 +475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2096798211358002605, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: -400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096798211358002610, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2096798211591555329, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: m_Name
@@ -571,8 +575,12 @@ PrefabInstance:
       objectReference: {fileID: 1429755264}
     - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: cardPoints
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: fireCardGO
+      value: 
+      objectReference: {fileID: 907503807786417185, guid: 06579cfd469a1fd498dd591486cf63cd, type: 3}
     - target: {fileID: 8921900160270271908, guid: b471de69578c02446990b74bba25ad0d, type: 3}
       propertyPath: waterCardGO
       value: 
@@ -581,6 +589,34 @@ PrefabInstance:
       propertyPath: thunderCardGO
       value: 
       objectReference: {fileID: 6256038253722740907, guid: dd01f9406a7182a46b4caae54d092156, type: 3}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: t0GO
+      value: 
+      objectReference: {fileID: 5109490868288012777, guid: fd06b37d80a87b44190a0ec7655ec34f, type: 3}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: t1GO
+      value: 
+      objectReference: {fileID: 7502977198253344066, guid: 992db4260f5ff0541a237e3a712d3b7a, type: 3}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: t2GO
+      value: 
+      objectReference: {fileID: 7502977198253344066, guid: 7599eca462e6d4d498d3a30051e01ed6, type: 3}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: myCamera
+      value: 
+      objectReference: {fileID: 1429755264}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: tower0Cost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: tower1Cost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119561420872346900, guid: b471de69578c02446990b74bba25ad0d, type: 3}
+      propertyPath: tower2Cost
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b471de69578c02446990b74bba25ad0d, type: 3}
 --- !u!1001 &3024680748507392918

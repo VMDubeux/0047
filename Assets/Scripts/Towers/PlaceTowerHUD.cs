@@ -10,7 +10,9 @@ public class PlaceTowerHUD : MonoBehaviour
     public int cardPoints, tower0Cost = 5, tower1Cost = 5, tower2Cost = 5;
     public TextMeshProUGUI cardPointsTMP, tower1CostUI, tower0CostUI, tower2CostUI;
     public Button tower0Button, tower1Button, tower2Button;
-    public GameObject cardPanelGO, towerPanelGO, useCardGO, placeTowerGO;
+    public GameObject cardPanelGO, towerPanelGO, useCardGO, placeTowerGO, t0GO, t1GO, t2GO;
+    public Camera myCamera;
+    RaycastHit hit;
     private void Start() {
         tower0CostUI.text = tower0Cost.ToString();
         tower1CostUI.text = tower1Cost.ToString();
@@ -65,48 +67,79 @@ public class PlaceTowerHUD : MonoBehaviour
     {
         if (tower0Selected)
         {
-            // colocar torre 0
-            Debug.Log("Selected");
-            CardValueChange();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    if (hit.collider.CompareTag("highground") && !hit.collider.GetComponent<HighgroundCheck>().hasTower)
+                    {
+                        Instantiate(t0GO, (hit.collider.transform.position + new Vector3(0,5,0)), Quaternion.identity);
+                        hit.collider.GetComponent<HighgroundCheck>().HasTower();
+                        cardPoints -= tower0Cost;
+                    }
+                }
+                GetComponent<CardSelection>().CompareCardPoints();
+                CardValueChange();
+                tower0Selected = false;
+            }
             towerPanelGO.SetActive(false);
-            tower0Selected = false;
         }
     }
     private void PlaceT1() // Torre 1 
     {
         if (tower1Selected)
         {
-                        Debug.Log("Selected");
-            // colocar torre 1 no mapa
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    if (hit.collider.CompareTag("highground") && !hit.collider.GetComponent<HighgroundCheck>().hasTower)
+                    {
+                        Instantiate(t1GO, (hit.collider.transform.position + new Vector3(0,5,0)), Quaternion.identity);
+                        hit.collider.GetComponent<HighgroundCheck>().HasTower();
+                        cardPoints -= tower1Cost;
+                    }
+                }
+                tower1Selected = false;
+                GetComponent<CardSelection>().CompareCardPoints();
+            }
             CardValueChange();
             towerPanelGO.SetActive(false);
-            tower1Selected = false;
         }
     }
     private void PlaceT2 () // Torre 2 
     {
-        if(tower2Selected)
+        if (tower2Selected)
         {
-                        Debug.Log("Selected");
-            // Colocar torre 2 no mapa
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    if (hit.collider.CompareTag("highground") && !hit.collider.GetComponent<HighgroundCheck>().hasTower)
+                    {
+                        Instantiate(t2GO, (hit.collider.transform.position + new Vector3(0,5,0)), Quaternion.identity);
+                        hit.collider.GetComponent<HighgroundCheck>().HasTower();
+                        cardPoints -= tower2Cost;   
+                    }
+                }
+                tower2Selected = false;
+                GetComponent<CardSelection>().CompareCardPoints();
+            }
             CardValueChange();
             towerPanelGO.SetActive(false);
-            tower2Selected = false;
         }
     }
-
     public void PlaceTower()
     {
-        useCardGO.SetActive(true);
-        placeTowerGO.SetActive(false);
         towerPanelGO.SetActive(true);
         cardPanelGO.SetActive(false);
     }
 
     public void CastCard()
     {
-        placeTowerGO.SetActive(true);
-        useCardGO.SetActive(false);
         cardPanelGO.SetActive(true);
         towerPanelGO.SetActive(false);
     }

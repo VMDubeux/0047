@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ground
   - nexus
+  - highground
   layers:
   - Default
   - TransparentFX

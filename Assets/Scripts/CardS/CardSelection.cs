@@ -78,6 +78,7 @@ public class CardSelection : MonoBehaviour
                 fireCardSelected = false;
                 cardPoints -= fireCost;
                 CardValueChange();
+                GetComponent<PlaceTowerHUD>().cardPanelGO.SetActive(false);
             }
         }
     }
@@ -98,6 +99,7 @@ public class CardSelection : MonoBehaviour
                 thunderCardSelected = false;
                 cardPoints -= thunderCost;
                 CardValueChange();
+                GetComponent<PlaceTowerHUD>().cardPanelGO.SetActive(false);
             }
         }
     }
@@ -109,6 +111,12 @@ public class CardSelection : MonoBehaviour
             waterCardSelected= false;
             cardPoints -= waterCost;
             CardValueChange();
+            GetComponent<PlaceTowerHUD>().cardPanelGO.SetActive(false);
         }
+    }
+
+    public void CompareCardPoints()
+    {
+        cardPoints = GetComponent<PlaceTowerHUD>().cardPoints;
     }
 }

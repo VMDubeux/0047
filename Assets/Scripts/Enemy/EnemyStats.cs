@@ -15,6 +15,12 @@ public class EnemyStats : MonoBehaviour
     NavMeshAgent navMesh;
     public Transform tower;    
     bool isDead = false;
+    public float reducedMoveSpeed = 2.5f;
+    public float slowdownDuration = 5f;
+
+    private float currentMoveSpeed;
+    private bool isSlowed = false;
+    private float slowdownTimer = 0f;
     void Start()
     {
         // Pegar par�metros dos ScriptleObjects
@@ -27,6 +33,7 @@ public class EnemyStats : MonoBehaviour
         navMesh.stoppingDistance = 0;
         // Igualar NavMeshSpeed com par�metro
         navMesh.speed = mySpeed;
+        currentMoveSpeed = mySpeed;
 
     }
     void Update()
@@ -37,6 +44,15 @@ public class EnemyStats : MonoBehaviour
         {
             isDead = true;
             Die();
+        }
+        if (isSlowed)
+        {
+            slowdownTimer -= Time.deltaTime;
+            if (slowdownTimer <= 0f)
+            {
+                isSlowed = false;
+                currentMoveSpeed = mySpeed;
+            }
         }
     }
 private void OnCollisionEnter(Collision other) {
@@ -62,4 +78,16 @@ private void OnCollisionEnter(Collision other) {
         GameObject hurt = Instantiate(hurtPS, transform.position, Quaternion.identity);
         Destroy(hurt, 2);
     }
+
+    public void SlowDown()
+    {
+        isSlowed = true;
+        slowdownTimer = slowdownDuration;
+        currentMoveSpeed = reducedMoveSpeed;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return currentMoveSpeed;
+    }
 }

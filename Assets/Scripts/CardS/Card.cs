@@ -6,7 +6,6 @@ public class Card : MonoBehaviour
 {
     Animator myAnimator;
     CardSelection cardSelection;
-    bool pickUp = false;
     private void Start() {
         myAnimator = GetComponent<Animator>();
         cardSelection = FindObjectOfType<CardSelection>().GetComponent<CardSelection>();
@@ -18,7 +17,6 @@ public class Card : MonoBehaviour
     {
             // add bonus
             cardSelection.cardPoints++;
-            cardSelection.CardValueChange();
-            pickUp = true;      
+            cardSelection.CardValueChange();     
     }
 }
