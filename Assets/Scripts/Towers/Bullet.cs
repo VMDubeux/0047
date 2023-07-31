@@ -5,6 +5,8 @@ public class Bullet : MonoBehaviour
     public int damage = 5;
     private Vector3 targetPosition;
     private Transform Target;
+    public GameObject firePS, waterPS, thunderPS;
+    public bool fireB, waterB, thunderB;
     public float speed = 70f;
     public float explosionRadius = 0f;
 
@@ -60,6 +62,16 @@ public class Bullet : MonoBehaviour
                 Damage(collider.transform);
                 SlowDownEnemy(collider.transform);
             }
+            if(fireB)
+            
+                Instantiate(firePS,transform.position, Quaternion.identity);
+            
+            else if (waterB)
+            
+                Instantiate(waterPS, transform.position, Quaternion.identity);
+            
+            else if (thunderB)
+                Instantiate(thunderPS, transform.position, Quaternion.identity);
         }
     }
 

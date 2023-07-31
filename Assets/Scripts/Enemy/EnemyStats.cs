@@ -61,11 +61,7 @@ private void OnCollisionEnter(Collision other) {
 }
     private void Die()
     {
-        int r = Random.Range(0,99);
-        if(r <= dropRate)
-        {
         Instantiate(cardGO, gameObject.transform.position, Quaternion.identity);
-        }
         Animator myAnimator = GetComponentInChildren<Animator>();
         AudioSource myAudioSource = GetComponent<AudioSource>();
         myAudioSource.Play();

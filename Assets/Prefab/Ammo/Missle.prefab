@@ -126,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 5624557566169926358}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 4.016, z: -3.8}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3393573072320932756}
@@ -196,5 +196,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  firePS: {fileID: 3394253304419404493, guid: a04c9f2196dd564499fd54ff2cb18e2d, type: 3}
+  waterPS: {fileID: 3394253304419404493, guid: 3d0052ea5eea7f34985d1b009fe62684, type: 3}
+  thunderPS: {fileID: 3394253304419404493, guid: f33aae7a168074c459d1aec84ad9db79, type: 3}
+  fireB: 1
+  waterB: 0
+  thunderB: 0
   speed: 100
   explosionRadius: 5
