@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ac04bacee108849a0fa0325c705725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHealth: 20
+  myHealth: 100
   myDamage: 5
   mySpeed: 10
   dropRate: 25
@@ -95,6 +95,8 @@ MonoBehaviour:
   cardGO: {fileID: 8629740999314369891, guid: 9b0b9e834375cb14ea5581869de17abd, type: 3}
   hurtPS: {fileID: 5336077648224627271, guid: 770dc82e23c387949ad45390df7a6283, type: 3}
   tower: {fileID: 2146052737386235803, guid: f3701cacd94ef1f4a96f6b8cfb089be2, type: 3}
+  reducedMoveSpeed: 2.5
+  slowdownDuration: 5
 --- !u!136 &7979501803167192603
 CapsuleCollider:
   m_ObjectHideFlags: 0
