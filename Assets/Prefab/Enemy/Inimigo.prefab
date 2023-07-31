@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ac04bacee108849a0fa0325c705725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHealth: 100
+  myHealth: 50
   myDamage: 5
   mySpeed: 10
   dropRate: 25
