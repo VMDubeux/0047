@@ -25,6 +25,7 @@ public class PlaceTowerHUD : MonoBehaviour
         PlaceT0();
         PlaceT1();
         PlaceT2();
+        CardValueChange();
     }
     // Funcoes CANVAS
     public void Tower0Selected()
@@ -80,7 +81,6 @@ public class PlaceTowerHUD : MonoBehaviour
                     }
                 }
                 GetComponent<CardSelection>().CompareCardPoints();
-                CardValueChange();
                 tower0Selected = false;
             }
             towerPanelGO.SetActive(false);
@@ -105,7 +105,6 @@ public class PlaceTowerHUD : MonoBehaviour
                 tower1Selected = false;
                 GetComponent<CardSelection>().CompareCardPoints();
             }
-            CardValueChange();
             towerPanelGO.SetActive(false);
         }
     }
@@ -128,7 +127,6 @@ public class PlaceTowerHUD : MonoBehaviour
                 tower2Selected = false;
                 GetComponent<CardSelection>().CompareCardPoints();
             }
-            CardValueChange();
             towerPanelGO.SetActive(false);
         }
     }
