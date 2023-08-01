@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Nexus : MonoBehaviour
 {
 
@@ -43,6 +44,7 @@ public class Nexus : MonoBehaviour
             if (nexusHP <= 0)
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene("Derrota");
             }
         
     }

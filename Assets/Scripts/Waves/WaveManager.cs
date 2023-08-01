@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class WaveManager : MonoBehaviour
@@ -19,7 +20,10 @@ public class WaveManager : MonoBehaviour
     }
     void Update()
     {
-
+        if(waveIndex >= 19)
+        {
+            SceneManager.LoadScene("Vitoria");
+        }
     }
 
     void CreepSpawn()

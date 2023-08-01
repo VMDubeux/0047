@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour
     [Header("Transition GameObjects:")]
     public GameObject StartingTransition;
     public GameObject EndingTransition;
+    public GameObject level1GO, pauseMenuGO;
 
     [Header("Settings GameObjects:")]
     public AudioMixer AudioMixer;
@@ -43,6 +44,7 @@ public class MenuController : MonoBehaviour
     {
         EnableEndTransition();
         Resolution();
+        
     }
 
     void Update()
@@ -94,6 +96,8 @@ public class MenuController : MonoBehaviour
     void StartGame()
     {
         Debug.Log("Iniciou o jogo.");
+        level1GO.SetActive(true);
+        pauseMenuGO.SetActive(false);
         MainMenu.SetActive(false);
         UICamera.gameObject.SetActive(false);
         CreditsVideo.SetActive(false);
