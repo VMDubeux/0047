@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84da6b15eb95e1f4a94903488a472b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 25
   firePS: {fileID: 3394253304419404493, guid: a04c9f2196dd564499fd54ff2cb18e2d, type: 3}
   waterPS: {fileID: 3394253304419404493, guid: 3d0052ea5eea7f34985d1b009fe62684, type: 3}
   thunderPS: {fileID: 3394253304419404493, guid: f33aae7a168074c459d1aec84ad9db79, type: 3}
